@@ -1,0 +1,13 @@
+version:  "3.8"
+
+services:
+
+  ide:
+    image: mattjtodd/theia-java
+    build: ./theia
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - $PWD:/home/project:cached
+      - /var/run/docker.sock:/var/run/docker.sock
